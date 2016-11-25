@@ -1,1 +1,1 @@
-# tour-pyqt
+# El Tour de PyQt
