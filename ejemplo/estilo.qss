@@ -1,0 +1,11 @@
+QPushButton {
+        background: blue;
+}
+
+QPushButton#ok {
+        background: red;
+}
+
+QPushButton:hover {
+        background: green;
+}

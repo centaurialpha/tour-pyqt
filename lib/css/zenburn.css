@@ -1,0 +1,80 @@
+/*
+
+Zenburn style from voldmar.ru (c) Vladimir Epifanov <voldmar@voldmar.ru>
+based on dark.css by Ivan Sagalaev
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #3f3f3f;
+  color: black;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-tag {
+  color: firebrick;
+}
+
+.hljs-template-tag {
+  color: red;
+}
+
+.hljs-number {
+  color: orange;
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-attribute {
+  color: firebrick;
+}
+
+.hljs-literal {
+  color: firebrick;
+}
+
+.hljs-subst {
+  color: firebrick;
+}
+
+.hljs-title,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-section,
+.hljs-type {
+  color: darkorange;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link {
+  color: #dca3a3;
+}
+
+.hljs-deletion,
+.hljs-string,
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #cc9393;
+}
+
+.hljs-addition,
+.hljs-comment,
+.hljs-quote,
+.hljs-meta {
+  color: #7f9f7f;
+}
+
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}

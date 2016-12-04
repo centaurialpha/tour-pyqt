@@ -1,0 +1,249 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>El Tour de PyQt</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/solarized-green.css">
+        <!-- Footer Plugin -->
+        <link rel="stylesheet" href="plugin/title-footer/title-footer.css">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/github.css">
+	</head>
+	<body>
+		<div class="reveal">
+            <img class="image" src="img/pyqt.png" width="7%">
+			<div class="slides">
+                <section>
+                    <img src="img/pyqt.png">
+                </section>
+                <!-- Section 2 -->
+				<section>
+                    <h2>El Tour de PyQt</h2>
+                    <ul>
+                        <li>Gabriel Acosta</li>
+                        <li>Estudiante</li>
+                        <li>Ninja-IDE Project Leader</li>
+                        <li>Desarrollador de Pireal</li>
+                    </ul>
+                    <div>
+                        <img width="30%" height="30%" src="img/g12.png">
+                        <img width="25%" height="25%" src="img/pireal_logo-black.png">
+                    </div>
+                </section>
+                <!-- Section 2 -->
+                <section>
+                    <ul>
+                        <li>¿Qué es Qt?</li>
+                        <li>¿Qué es PyQt?</li>
+                        <li>Conceptos básicos</li>
+                        <li>¡Hagámos un Navegador Web!</li>
+                        <li class="normal">Qt Style Sheets</li>
+                    </ul>
+                </section>
+                <!-- Section 3 -->
+                <section>
+                    <h3>¿Qué es Qt?</h3>
+                    <ul>
+                        <li>Cross-platform Framework<ul>
+                            <li>Desktop Platforms<ul>
+                                <li>Windows, Linux/X11, Mac OS X</li></ul></li>
+                            <li>Mobile Platforms<ul>
+                                <li>Android, iOS, WinRT</li></ul></li>
+                            <li>Embedded Platforms<ul>
+                                <li>Embedded Android, Embedded Linux, Windows Embedded</li></ul></li>
+                            </ul>
+                        </li>
+                        <li class="fragment">Usado para crear aplicaciones con Interfaz Gráfica de Usuario</li>
+                        <li class="fragment">No está limitado sólo a la GUI<ul>
+                            <li>Networking, Database, OpenGL, Multimedia, QML/Qt Quick, WebKit</li>
+                            </ul></li>
+                        <li class="fragment">Licencias<ul>
+                            <li>Libre</li>
+                            <li>Comercial</li></ul>
+                        </li>
+                        <li class="fragment">Herramienta más usada</li>
+                    </ul>
+                </section>
+                <!-- Section 4 -->
+                <section>
+                    <h3>¿Qué es PyQt?</h3>
+                    <ul>
+                        <li>Python binding of the Qt libraries</li>
+                        <li class="fragment">Cross-platform</li>
+                        <li class="fragment">Full API</li>
+                    </ul>
+                </section>
+                <!-- Section 5 -->
+                <section>
+                    <h3>Conceptos básicos</h3>
+                    <ul>
+                        <li>GUI</li>
+                        <li>Widget</li>
+                        <li>Layout</li>
+                        <li>Signals y Slots</li>
+                        <li>Main Loop</li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <h3>GUI</h3>
+                        <img src="img/gui.png">
+                    </section>
+                    <section>
+                        <h3>Widget</h3>
+                        <img src="img/widgets.png">
+                    </section>
+                    <section>
+                        <img src="img/qwidget.png">
+                    </section>
+                    <section>
+                        <h3>Layout</h3>
+                        <p>Contenedor de componentes (widget o layout)</p>
+                        <ul>
+                            <li class="fragment">Layout Vertical (QVBoxLayout)<ul>
+                                <img src="img/vbox.png">
+                                </ul></li>
+                            <li class="fragment">Layout Horizontal (QHBoxLayout)<ul>
+                                <img src="img/hbox.png">
+                                </ul></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Signals y Slots</h3>
+                        <h4>Comunicación entre objetos</h4>
+
+                        <img class="fragment" src="img/signal_slot.png">
+                    </section>
+                    <section>
+                    <h3>Sintáxis</h3>
+                        <pre class="fragment"><code class="python">
+boton = QPushButton("Clickeame!")
+					</code></pre>
+                    <pre class="fragment"><code class="python">
+def mi_funcion():
+    print("Botón clickeado")
+					</code></pre>
+                        <pre class="fragment"><code class="python">
+# Qt, conectáme la señal 'clicked' del botón a la función 'mi_funcion'
+boton.clicked.connect(mi_funcion)
+					    </code></pre>
+                    </section>
+                    <section>
+                        <h3>Slot con argumentos</h3>
+                        <pre><code class="python">
+def mi_otra_funcion(nombre):
+    def print("Hola {name}!".format(name=nombre))
+    					</code></pre>
+                        <pre class="fragment"><code class="python">
+boton.clicked.connect(lambda: mi_otra_funcion('Gabo'))
+		    			</code></pre>
+                    </section>
+                    <section>
+                    <h3>Main Loop</h3>
+                    <pre class="fragment"><code class="python">
+app = QApplication([])
+# Widgets
+    .
+    .
+    .
+app.exec_()
+					</code></pre>
+                    <pre class="fragment"><code class="python">
+app = QApplication([])
+ventana = QWidget()
+QLabel("Holas", ventana)
+ventana.show()
+app.exec_()
+					</code></pre>
+                    </section>
+                </section>
+                <section>
+                    <h3>¡Hagámos un navegador!</h3>
+                    <img width="80%" src="img/navegador_pyconar.png">
+                </section>
+                <section>
+                    <section>
+                        <h3>Qt Style Sheets</h3>
+                        <p>Sintáxis idéntica a las hojas de estilo CSS</p>
+                        <div class="fragment">
+                        <h5>CSS</h5>
+                        <pre><code class="css">
+body {
+    background: #ff0000;
+    color: white;
+}
+                        </code></pre>
+                        </div>
+                        <pre class="fragment"><code class="css">
+#boton {
+    border: 1px solid gray;
+}
+
+#boton:pressed {
+    background: lightblue;
+}
+					    </code></pre>
+                    </section>
+                    <section>
+                        <h3>Qt Style Sheets</h3>
+                        <div>
+                        <h5>QSS</h5>
+                        <pre><code class="css">
+QWidget {
+    background: gray;
+}
+					</code></pre>
+                    <pre class="fragment"><code class="css">
+QPushButton#mi_boton {
+    background: blue;
+}
+
+QPushButton#mi_boton:pressed {
+    background: lightblue;
+}
+                    </code></pre>
+                    <pre class="fragment"><code class="python">
+boton = QPushButton("Clickeame!")
+boton.setObjectName("mi_boton")
+                    </code></pre>
+                    </div>
+                    </section>
+                </section>
+                <section>
+                    <h3>Links</h3>
+                    <ul>
+                        <li>Charla y Ejemplo: <a class="link" href="http://github.com/centaurialpha/tour-pyqt">http://github.com/centaurialpha/tour-pyqt</a></li>
+                        <li>PyQt: <a class="link" href="https://riverbankcomputing.com/software/pyqt/intro">https://riverbankcomputing.com/software/pyqt/intro</a></li>
+                        <li>Qt Style Sheets Examples: <a class="link" href="doc.qt.io/qt-5/stylesheet-examples.html">doc.qt.io/qt-5/stylesheet-examples.html</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>Preguntas?</h1>
+                </section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>>
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+                    { src: 'js/python.js'},
+					{ src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/title-footer/title-footer.js', async: true, callback: function() { title_footer.initialize("El Tour de PyQt • Gabriel Acosta • PyConAr 2016 • Bahía Blanca", 'rgba(34,40,64, 0.7)'); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
